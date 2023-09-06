@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Righteous", "sans-serif";
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #c7cdd3;
+}
+
+.card{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card_front, .card_back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.card_front{
+    font-size: 24px;
+    background-color: #101c2c;
+    transform: rotateY(180deg);
+}
+
+.card_back{
+    font-size: 24px;
+    color: #101c2c;
+    background-color: #05c3ff;
+}
+
+#gameOver{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.9);
+    color: white;
+    font-size: 2rem;
+    display: none; /* Inicia com none pois no inicio do jogo esta tela não deve aparecer, muda no JS */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#restart{
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+}
+
+#gameBoard{
+    max-width: 700px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
